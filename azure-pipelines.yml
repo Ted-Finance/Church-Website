@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'  # Because App Service is on Windows
+  vmImage: 'ubuntu-latest'  # Because App Service is on Linux
 
 variables:
   appName: 'church-website'
