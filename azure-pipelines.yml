@@ -1,0 +1,41 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'  # Because App Service is on Windows
+
+variables:
+  appName: 'church-website'
+  resourceGroup: 'QB-GLB-DEV-RG'
+  artifactName: 'react-build'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'Install dependencies and build app'
+
+- task: CopyFiles@2
+  inputs:
+    Contents: 'build/**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy build output to artifact staging'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: '$(artifactName)'
+    publishLocation: 'Container'
+  displayName: 'Publish Artifact'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Dev-SC'
+    appName: '$(appName)'
+    package: '$(Pipeline.Workspace)/$(artifactName)/**/*.zip'
+  displayName: 'Deploy to Azure Web App'
