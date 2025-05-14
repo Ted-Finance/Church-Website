@@ -1,8 +1,8 @@
 import React from 'react'
-import Button from '../ui/Button'
-import { LCleft, Lcm, Lcr } from '../../assets'
+import Button from '../../ui/Button'
+import { LCleft, Lcm, Lcr } from '../../../assets'
 import { Link } from 'react-router-dom'
-import { FaChevronRight } from 'react-icons/fa6'
+import { FaArrowRightLong } from 'react-icons/fa6'
 
 const LoveAndCompasionSection: React.FC = () => {
     return (
@@ -16,8 +16,8 @@ const LoveAndCompasionSection: React.FC = () => {
                 <Button variant='nav' label='read more' />
             </div>
             <div className='flex gap-8 mt-10'>
-                <div className='w-[293px] h-[384px] rounded-[60px] overflow-hidden relative'>
-                    <img className='absolute inset-0 w-full h-full object-cover' src={LCleft} alt="" />
+                <div className='w-[293px] h-[384px] rounded-[60px] overflow-hidden border relative'>
+                    <img className='absolute inset-0 object-fill rotate-[90deg]' src={LCleft} alt="" />
                 </div>
                 <div className='w-[390px] h-[512px] rounded-[60px] overflow-hidden relative top-20'>
                     <img className='absolute inset-0 w-auto h-full object-cover' src={Lcm} alt="" />
@@ -27,13 +27,13 @@ const LoveAndCompasionSection: React.FC = () => {
                 </div>
 
             </div>
-            <div className='max-w-[600px] flex flex flex-col items-center gap-3 mt-40 mb-20'>
+            <div className='max-w-[600px] flex flex-col items-center gap-3 mt-40 mb-20'>
                 <div>
                     <p className='text-[16px] font-[400] text-center uppercase'>our mission & vision</p>
                     <h2 className='text-[32px] text-secondary text-center font-[700] uppercase'>celebrate WITH US</h2>
                 </div>
                 <p className='text-center text-[16px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <Link to={"/"} className='flex'><p>Read more</p> <FaChevronRight className='text-secondary pl-10' /></Link>
+                <Link to={"/"} className='flex gap-20 items-center'><p>Read more</p> <FaArrowRightLong className='text-secondary' /></Link>
             </div>
 
         </div>

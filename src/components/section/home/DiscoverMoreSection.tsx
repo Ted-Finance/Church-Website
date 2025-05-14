@@ -1,5 +1,5 @@
 import React from 'react'
-import { AboutCardIcon, GetinvolvedCard, GivingbackIcon } from '../../assets'
+import { AboutCardIcon, GetinvolvedCard, GivingbackIcon } from '../../../assets'
 
 type CardProps = {
     icon: any,
@@ -42,8 +42,8 @@ const DiscoverMoreSection: React.FC = () => {
     return (
         <div className='flex flex-col gap-3 items-center mt-20'>
             <div>
-                <p className='text-[16px] font-[400] text-center upppercase'>Discover more about our faith, our meetings, and how we serve THE LORD</p>
-                <h2 className='text-[48px] text-secondary text-center font-[700]'>A church where faith feels applicable to daily life</h2>
+                <p className='text-[16px] font-[400] text-center uppercase'>Discover more about our faith, our meetings, and how we serve THE LORD</p>
+                <h2 className='text-[48px] text-secondary text-center font-[700] uppercase'>A church where faith feels applicable to daily life</h2>
             </div>
             <div className='flex gap-10'>
                 {

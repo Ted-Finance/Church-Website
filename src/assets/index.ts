@@ -15,6 +15,13 @@ import benefit1 from './home/benefitPic1.jpg'
 import benefit2 from './home/benefitPic2.png'
 import benefit3 from './home/benefitPic3.jpg'
 import benefit4 from './home/benefit4.png'
+import videoCoverImg from './home/videoCoverImg.jpg'
+
+import serveTheWorldImg from './home/serveTheWorldImg.jpg'
+import quoteIcon from './home/icons/Quoteicon.svg'
+
+//assets for contact page
+import contactCoverImg from './contact/contactPageCoverImg.png'
 
 
-export {Logo, HeroBg, TagLine,TagLineBig , AboutCardIcon, GetinvolvedCard, GivingbackIcon, LCleft, Lcm, Lcr, benefit1, benefit2, benefit3,benefit4}
+export {Logo, HeroBg, TagLine,TagLineBig , AboutCardIcon, GetinvolvedCard, GivingbackIcon, LCleft, Lcm, Lcr, benefit1, benefit2, benefit3,benefit4,videoCoverImg, serveTheWorldImg, quoteIcon,contactCoverImg}

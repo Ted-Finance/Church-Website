@@ -1,6 +1,6 @@
 import React from 'react'
-import { HeroBg, TagLineBig } from '../../assets'
-import Button from '../ui/Button'
+import { HeroBg, TagLineBig } from '../../../assets'
+import Button from '../../ui/Button'
 
 const Hero: React.FC = () => {
     return (
