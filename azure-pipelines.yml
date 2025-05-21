@@ -1,0 +1,43 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'  # Linux App Service requires Linux-compatible agent
+
+variables:
+  appName: 'church-website'
+  artifactName: 'react-app'
+  buildDir: 'dist'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'Install and Build React App'
+
+- task: CopyFiles@2
+  inputs:
+    Contents: '$(buildDir)/**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy Build Output'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: '$(artifactName)'
+    publishLocation: 'Container'
+  displayName: 'Publish Build Artifact'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Dev-SC'
+    appName: '$(appName)'
+    package: '$(Pipeline.Workspace)/$(artifactName)'
+    runtimeStack: 'NODE|20-lts'
+  displayName: 'Deploy to Azure Linux Web App'
+  
