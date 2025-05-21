@@ -12,7 +12,7 @@ const navLinks: NavLink[] = [
     },
     {
         title: "Sermon",
-        path: ""
+        path: "/sermons"
     },
     {
         title: "Events",

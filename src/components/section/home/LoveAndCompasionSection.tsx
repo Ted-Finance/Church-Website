@@ -7,7 +7,7 @@ import { FaArrowRightLong } from 'react-icons/fa6'
 const LoveAndCompasionSection: React.FC = () => {
     return (
         <div className='mt-20 flex flex-col items-center'>
-            <div className='max-w-[1000px] flex flex flex-col items-center gap-8'>
+            <div className='max-w-[1000px] flex flex-col items-center gap-8'>
                 <div>
                     <p className='text-[16px] font-[400] text-center upppercase'>Embracing Love and Extending Compassion</p>
                     <h2 className='text-[48px] text-secondary text-center font-[700]'>love and compassion</h2>
@@ -17,7 +17,7 @@ const LoveAndCompasionSection: React.FC = () => {
             </div>
             <div className='flex gap-8 mt-10'>
                 <div className='w-[293px] h-[384px] rounded-[60px] overflow-hidden border relative'>
-                    <img className='absolute inset-0 object-fill rotate-[90deg]' src={LCleft} alt="" />
+                    <img className='absolute inset-0 w-full h-full object-cover' src={LCleft} alt="" />
                 </div>
                 <div className='w-[390px] h-[512px] rounded-[60px] overflow-hidden relative top-20'>
                     <img className='absolute inset-0 w-auto h-full object-cover' src={Lcm} alt="" />

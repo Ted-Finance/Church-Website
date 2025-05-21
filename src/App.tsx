@@ -6,13 +6,10 @@ import transition from "./components/transition";
 import { AnimatePresence } from "motion/react";
 import Transition from "./components/transition";
 import AnimatedRoutes from "./components/Animatedroutes";
+import SermonPage from "./pages/SermonPage";
+import AboutUs from "./pages/aboutUs";
+import Pastors from "./pages/pastorsPage";
 
-
-const variants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
-};
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,8 +17,9 @@ const router = createBrowserRouter(
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/contact-us" element={<ContactUs />} />
-        {/* <Route path="" element={} errorElement={}/>
-      <Route path="" element={} errorElement={}/> */}
+        <Route path="/sermons" element={<SermonPage />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/pastors" element={<Pastors />} />
       </Route>
     </Route>
   )

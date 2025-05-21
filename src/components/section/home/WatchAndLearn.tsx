@@ -11,7 +11,7 @@ const MediaLinkCard: React.FC<MediaLinkCardType> = ({ img, title, content }) => 
     return (
         <div className='w-[302px] h-[384px] border cursor-pointer relative overflow-hidden '>
             <img className='w-full h-full object-cover absolute inset-0' src={img} alt="image" />
-            <div className="p-5 absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 flex flex-col gap-2 translate-y-16 hover:translate-y-0 transition-all duration-1 z-10 flex flex-col gap-5 justify-end text-white">
+            <div className="p-5 absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 translate-y-16 hover:translate-y-0 transition-all duration-1 z-10 flex flex-col gap-5 justify-end text-white">
                 <h3 className='text-[24px] font-[700]'>{title}</h3>
                 <p>{content}</p>
             </div>

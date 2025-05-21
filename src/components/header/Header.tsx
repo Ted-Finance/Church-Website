@@ -7,22 +7,22 @@ export interface NavLink {
     title: string,
     path: string
 }
- const navLinks: NavLink[] = [
+const navLinks: NavLink[] = [
     {
         title: "Home",
-        path: ""
+        path: "/"
     },
     {
         title: "Sermon",
-        path: ""
+        path: "/sermons"
     },
     {
         title: "Pastor",
-        path: ""
+        path: "/pastors"
     },
     {
         title: "About Us",
-        path: ""
+        path: "/about-us"
     },
     {
         title: "Contact Us",
@@ -47,7 +47,7 @@ const Header: React.FC = () => {
                         ))
                     }
                 </div>
-                <Button variant='nav' label='Contact Us' />
+                <Link to={"/contact-us"}><Button variant='nav' label='Contact Us' /></Link>
             </nav>
         </header>
     )

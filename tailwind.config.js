@@ -10,7 +10,8 @@ export default {
           700:"#DC9853",
           800:"#A54E2B" },
         secondary: "#161722",
-        redOrange:"#EA4335"
+        redOrange:"#EA4335",
+        lightGray:"#F5F2F0"
       },
     },
   },

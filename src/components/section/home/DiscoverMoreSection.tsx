@@ -45,7 +45,7 @@ const DiscoverMoreSection: React.FC = () => {
                 <p className='text-[16px] font-[400] text-center uppercase'>Discover more about our faith, our meetings, and how we serve THE LORD</p>
                 <h2 className='text-[48px] text-secondary text-center font-[700] uppercase'>A church where faith feels applicable to daily life</h2>
             </div>
-            <div className='flex gap-10'>
+            <div className='flex flex-col md:flex-row gap-10'>
                 {
                     discoverCards.map((cardDetail, index) => (
                         <Card key={index} icon={cardDetail.icon} title={cardDetail.title} content={cardDetail.content} />
