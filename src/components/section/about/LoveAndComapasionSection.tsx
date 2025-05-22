@@ -1,7 +1,5 @@
 import React from 'react'
 import { LCAboutLeft, LCAboutMIddle, LCAboutRight } from '../../../assets'
-import { Link } from 'react-router-dom'
-import { FaArrowRightLong } from 'react-icons/fa6'
 
 const LoveAndCompasionSection: React.FC = () => {
     return (
