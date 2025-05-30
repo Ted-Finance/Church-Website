@@ -4,7 +4,7 @@ import { RiMapPin3Line } from 'react-icons/ri'
 
 const EventCard: React.FC = () => {
     return (
-        <div className='w-[600px] bg-primary-300 p-8 flex flex-col gap-3 relative group'>
+        <div className='w-full md:w-[600px] bg-primary-300 p-8 flex flex-col gap-3 relative group'>
             <div className='w-full flex justify-end'>
                 <div className='w-fit flex flex-col items-center gap-0'>
                     <h2 className='font-[700] text-[24px] p-0 m-0 leading-[18px]'>20</h2>

@@ -59,12 +59,12 @@ const BlogHighlightInfo: Blog[] = [
 
 const ReadOurBlogSection: React.FC = () => {
     return (
-        <div className='my-20 px-20'>
-            <div>
+        <div className='my-20  md:px-20 gap-3'>
+            <div className='px-2'>
                 <p className='text-[16px] font-[400] text-center uppercase'>Read our Blog</p>
-                <h2 className='text-[48px] text-secondary text-center font-[700] uppercase'>Share Your Light, Inspire Others, Strengthen Belief.</h2>
+                <h2 className='text-[32px] md:text-[48px] text-secondary text-center font-[700] uppercase'>Share Your Light, Inspire Others, Strengthen Belief.</h2>
             </div>
-            <div className='flex justify-between w-full gap-10'>
+            <div className='flex flex-col md:flex-row justify-between w-full gap-10 px-10 md:px-0'>
                 {
                     BlogHighlightInfo.map((blog:Blog)=>(
                         <BlogCard theme={blog.theme} topic={blog.topic} bibleVersion={blog.bibleVersion} scripture={blog.scripture} verse={blog.verse} />

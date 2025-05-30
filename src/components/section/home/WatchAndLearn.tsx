@@ -45,12 +45,12 @@ const MediaLinkDetials: MediaLinkCardType[] = [
 const WatchAndLearn: React.FC = () => {
     return (
         <div>
-            <div className='w-full flex flex-col items-center bg-[#F5F2F0] p-20 gap-10'>
+            <div className='w-full flex flex-col items-center bg-[#F5F2F0] px-0 md:px-20 p-20 gap-10'>
                 <div className='max-w-[600px] flex flex-col items-center gap-8'>
                     <p className='text-[16px] font-[400] text-center uppercase'>Watch and listen</p>
                     <h2 className='text-[48px] text-secondary text-center font-[700] uppercase'>THE benefits of joining our church</h2>
                 </div>
-                <div className='flex gap-10'>
+                <div className='flex flex-col md:flex-row gap-10'>
                     {
                         MediaLinkDetials.map((media,index) => (
                             <MediaLinkCard key={index} img={media.img} title={media.title} content={media.content} />
@@ -58,8 +58,8 @@ const WatchAndLearn: React.FC = () => {
                     }
                 </div>
             </div>
-            <div className='w-full py-20 px-40 border'>
-                <div className='w-full h-[626px] rounded-[30px] overflow-hidden border cursor-pointer relative group'>
+            <div className='w-full py-20 px-5 md:px-40 border'>
+                <div className='w-full h-[334px] md:h-[626px] rounded-[30px] overflow-hidden border cursor-pointer relative group'>
                     <img className='w-full h-full object-cover absolute inset-0' src={videoCoverImg} alt="image" />
                     <div className='group-hover:hidden w-full h-full absolute inset-0 bg-gradient-to-t from-black/60 to-black/60 flex justify-center items-center'>
                         <div className='bg-redOrange rounded-full w-fit h-fit p-4'><FaPlay className='text-white text-[24px]' /></div>

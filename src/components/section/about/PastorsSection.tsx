@@ -121,8 +121,8 @@ const PastorsSection: React.FC = () => {
                 <p className='text-[16px] font-[400] text-center uppercase'>Our church pastors</p>
                 <h2 className='text-[48px] text-secondary text-center font-[700] uppercase'>meet our Inspirational PASTORS</h2>
             </div>
-            <div className='flex flex-col gap-5 px-20'>
-                <div className='w-full flex justify-between gap-5'>
+            <div className='w-full flex flex-col gap-5 md:px-20'>
+                <div className='w-full flex flex-wrap justify-between gap-5'>
                     {
                         pastors.slice(0, 2).map((pastor) => (
                             <PastorProfileCard pastor={pastor} />

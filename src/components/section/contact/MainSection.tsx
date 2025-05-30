@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom'
 
 const MainSection: React.FC = () => {
     return (
-        <div className='w-full flex flex-col gap-8 p-20 bg-[#F5F2F0]  '>
-            <h2 className='text-[24px] font-[700] uppercase'>contact form:</h2>
-            <div className='flex gap-20 justify-center'> 
+        <div className='w-full flex flex-col gap-8 px-8 py-20 md:p-20 bg-[#F5F2F0]  '>
+            <h2 className='text-[20px] md:text-[24px] font-[700] uppercase'>contact form:</h2>
+            <div className='w-full flex flex-col md:flex-row gap-20 justify-center'> 
                 <ContactForm />
                 <div className='max-w-[460px] flex flex-col gap-8'>
                     <div>
                         <p className='capitalize text-[16px] font-[400]'>Address</p>
-                        <h2 className='uppercase text-[24px] font-[700]'>The Latter Day Church of Jesus Christ,
+                        <h2 className='uppercase text-[20px] md:text-[24px] font-[700]'>The Latter Day Church of Jesus Christ,
                             Ayeteju Street, Ikram Akoko</h2>
                     </div>
                     <div>
                         <p className='capitalize text-[16px] font-[400]'>Contact Details</p>
-                        <h2 className='uppercase text-[24px] font-[700]'>(480) 555-0103</h2>
-                        <h2 className='uppercase text-[24px] font-[700]'>ldcchristchurch@gmail.com</h2>
+                        <h2 className='uppercase text-[20px] md:text-[24px] font-[700]'>(480) 555-0103</h2>
+                        <h2 className='uppercase text-[20px] md:text-[24px] font-[700]'>ldcchristchurch@gmail.com</h2>
                     </div>
 
                     <div className='flex flex-col gap-5'>
