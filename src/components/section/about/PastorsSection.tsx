@@ -2,6 +2,7 @@ import React from 'react'
 import type { Pastor } from '../../ui/PastorProfileCard'
 import { pastor1, pastor2, ROAjayiImg, sermonPageMan } from '../../../assets'
 import { PastorProfileCard } from '../../ui/PastorProfileCard'
+import { motion } from 'motion/react'
 
 export const pastors: Pastor[] = [
     {
@@ -117,25 +118,50 @@ In 1985, he founded a prayer Ministry. `
 const PastorsSection: React.FC = () => {
     return (
         <div className='w-full flex flex-col items-center p-20 gap-10'>
-            <div className=' flex flex-col items-center gap-5'>
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.2 }}
+                className=' flex flex-col items-center gap-5'>
                 <p className='text-[16px] font-[400] text-center uppercase'>Our church pastors</p>
                 <h2 className='text-[48px] text-secondary text-center font-[700] uppercase'>meet our Inspirational PASTORS</h2>
-            </div>
+            </motion.div>
             <div className='w-full flex flex-col gap-5 md:px-20'>
-                <div className='w-full flex flex-wrap justify-between gap-5'>
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.25
+                            }
+                        }
+                    }}
+                    className='w-full flex flex-wrap justify-between gap-5'>
                     {
                         pastors.slice(0, 2).map((pastor) => (
                             <PastorProfileCard pastor={pastor} />
                         ))
                     }
-                </div>
-                <div className='w-full flex justify-between gap-5 flex-wrap'>
+                </motion.div>
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.25
+                            }
+                        }
+                    }}
+                    className='w-full flex justify-between gap-5 flex-wrap'>
                     {
                         pastors.slice(3).map((pastor) => (
                             <PastorProfileCard pastor={pastor} />
                         ))
                     }
-                </div>
+                </motion.div>
             </div>
         </div>
     )

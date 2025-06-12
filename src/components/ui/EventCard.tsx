@@ -1,10 +1,16 @@
+import { motion } from 'motion/react'
 import React from 'react'
 import { FaRegClock } from 'react-icons/fa6'
 import { RiMapPin3Line } from 'react-icons/ri'
 
 const EventCard: React.FC = () => {
     return (
-        <div className='w-full md:w-[600px] bg-primary-300 p-8 flex flex-col gap-3 relative group'>
+        <motion.div
+            variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+            className='w-full md:w-[600px] bg-primary-300 p-8 flex flex-col gap-3 relative group'>
             <div className='w-full flex justify-end'>
                 <div className='w-fit flex flex-col items-center gap-0'>
                     <h2 className='font-[700] text-[24px] p-0 m-0 leading-[18px]'>20</h2>
@@ -27,7 +33,7 @@ const EventCard: React.FC = () => {
             </div>
             <div className='absolute transition-all duration-[1s] inset-x-0 bottom-0 w-0 group-hover:w-full h-[16px] bg-primary-500'></div>
 
-        </div>
+        </motion.div>
     )
 }
 

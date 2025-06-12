@@ -70,8 +70,8 @@ const Footer: React.FC = () => {
                 <div className='flex flex-col gap-5 order-first md:order-none w-full md:w-auto'>
                     <h2 className='text-[30px] md:text-[32px] font-[700] uppercase text-white max-w-[500px]'>Subscribe to get Latest Updates and News</h2>
                     <div className='h-[75.5px] w-full md:w-[512px] flex p-1 border-white/15 border-[1px] rounded-[16px]'>
-                        <input type="text" className='pl-10 flex-1 bg-transparent text-white text-[16px] placeholder:text-white/70 focus:outline-none focus:ring-0' placeholder='Yourmail@gmail.com' />
-                        <Button variant='primary' label='Subscribe' />
+                        <input type="text" className='pl-2 md:pl-10 flex-1 bg-transparent text-white text-[16px] placeholder:text-white/70 focus:outline-none focus:ring-0' placeholder='Yourmail@gmail.com' />
+                        <Button variant='primary' label='Subscribe' additionalStyle='!px-8'/>
                     </div>
                 </div>
             </div>

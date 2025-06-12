@@ -2,11 +2,12 @@ import React from 'react'
 import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import Button from './Button'
+import { motion } from 'motion/react'
 export type Pastor = {
     img: string,
     name: string,
     title: string,
-    church?:string,
+    church?: string,
     socials: {
         facebook: string,
         twitter: string,
@@ -22,7 +23,12 @@ type CardProp = {
 
 const PastorProfileCard: React.FC<CardProp> = ({ pastor, additionalStyles }) => {
     return (
-        <div className={`bg-lightGray rounded-[30px] flex flex-col items-center p-10 pb-20 gap-5 flex-1 min-w-[260px] my-3 ${additionalStyles}`}>
+        <motion.div
+            variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+            className={`bg-lightGray rounded-[30px] flex flex-col items-center p-10 pb-20 gap-5 flex-1 min-w-[260px] my-3 ${additionalStyles}`}>
             <div className='rounded-full w-[200px] h-[200px] overflow-hidden relative border-2'>
                 <img src={pastor.img} alt="pastor-profile" className='absolute inset-0 w-full h-full object-cover' />
             </div>
@@ -38,19 +44,24 @@ const PastorProfileCard: React.FC<CardProp> = ({ pastor, additionalStyles }) => 
             </div>
 
 
-        </div>
+        </motion.div>
     )
 }
 
 const PastorsFullProfile: React.FC<CardProp> = ({ pastor, additionalStyles }) => {
     return (
-        <div className={`flex flex-col gap-5 md:bg-secondary md:gap-0 md:flex-row justify-between rounded-[35px] w-full ${additionalStyles}`}>
-            <PastorProfileCard pastor={pastor} additionalStyles='!m-0 !max-w-[555px]'/>
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            className={`flex flex-col gap-5 md:bg-secondary md:gap-0 md:flex-row justify-between rounded-[35px] w-full ${additionalStyles}`}>
+            <PastorProfileCard pastor={pastor} additionalStyles='!m-0 !max-w-[555px]' />
             <div className="flex flex-col items-center rounded-[30px] md:rounded-l-none md:rounded-r-[30px] flex-1 gap-8 md:px-10  py-8 bg-secondary">
                 <div className='max-h-[300px] flex-1 px-5 overflow-y-auto scrollbar-thin'>
                     <p className='text-white w-full'>{pastor.about}</p>
                 </div>
-                <Button variant='primary' label='read more' additionalStyle='!block md:!hidden'/>
+                <Button variant='primary' label='read more' additionalStyle='!block md:!hidden' />
                 <div className='max-w-[347px] text-center flex flex-col items-center gap-2'>
                     <h2 className='text-[24px] font-[700] text-primary-500'>{pastor.name}</h2>
                     <p className='text-primary-500'>{pastor.title}</p>
@@ -62,7 +73,7 @@ const PastorsFullProfile: React.FC<CardProp> = ({ pastor, additionalStyles }) =>
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
